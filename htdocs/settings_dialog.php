@@ -1,5 +1,5 @@
 <?php require '../config.php'; ?>
-<div id="settings_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="settings_modal" class="modal hide fade" style="background-color:#000000;" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></button>
   <h3>Nagdash Settings</h3>
@@ -7,7 +7,7 @@
 <div class="modal-body">
 <form id="settings-form" action="do_settings.php" method="post">
 <fieldset>
-<legend>Instances to show</legend>
+<legend style="color:#ffffff;">Instances to show</legend>
 <?php
     foreach ($nagios_hosts as $host) {
         $checked = (!in_array($host['tag'], $unwanted_hosts)) ? "checked" : "";
@@ -19,10 +19,10 @@
 ?>
 </fieldset>
 <fieldset>
-<legend>Hostname regex</legend>
+<legend style="color:#ffffff;">Hostname regex</legend>
 <input type="input" name="hostfilter" value="<?php echo $_COOKIE['nagdash_hostfilter']; ?>">
 </fieldset>
-<legend>Last state change</legend>
+<legend style="color:#ffffff;">Last state change</legend>
 <div class="settings_group">
 <span class="settings_element">
 <select name="select_last_state_change" style="width:110px;">
@@ -38,7 +38,7 @@ foreach ($select_last_state_change_options as $time_in_seconds => $time_in_engli
 </select>
 </span>
 <span class="settings_element"> ago</span>
-<legend>Sort options</legend>
+<legend style="color:#ffffff;">Sort options</legend>
 <?php
 // If the config option 'sort_by_time' is true, check if the user is overriding it.
 // If not, let the config option take effect.
@@ -73,7 +73,7 @@ Descending?
 </div>
 </form>
 </div>
-<div class="modal-footer">
+<div class="modal-footer" style="background-color:#000000;">
   <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   <button class="btn btn-primary" onClick="$('#settings-form').submit();">Save changes</button>
 </div>
