@@ -16,12 +16,13 @@ if (!is_array($unwanted_hosts)) $unwanted_hosts = array();
 <head>
 <title>Nagios Dashboard</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-document.refresh_every_ms = <?php echo (isset($refresh_every_ms) ? $refresh_every_ms : 20000); ?>;
-</script>
+
+
+
 <script src="js/nagdash.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
+
 <link rel="stylesheet" href="css/blinkftw.css">
 <link rel="stylesheet" href="css/main.css">
 <style type="text/css">
@@ -29,11 +30,6 @@ document.refresh_every_ms = <?php echo (isset($refresh_every_ms) ? $refresh_ever
         echo ".tag_{$host['tag']}   { background-color: {$host['tagcolour']} }\n";
   } ?>
 </style>
-<?php
-    if (isset($extra_css)) {
-        echo "<link rel=\"stylesheet\" href=\"{$extra_css}\">";
-    }
-?>
 </head>
 <body>
   <div id="spinner"><h3><img src="images/ajax-loader.gif" align="absmiddle"> Refreshing...</h3></div>
@@ -43,10 +39,8 @@ document.refresh_every_ms = <?php echo (isset($refresh_every_ms) ? $refresh_ever
 
 
 <script>
-    $(document).keypress(function(e) {
-        if (e.which == 115) { // "s"
-            $("#settings_modal").modal();
-        }
+    $(document).keypress("s", function(e) {
+        $("#settings_modal").modal();
     });
     $(document).ready(load_nagios_data(<?php echo ($show_refresh_spinner === true)?>));
 </script>
