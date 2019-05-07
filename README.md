@@ -1,5 +1,10 @@
 # Nagdash
 
+## What is different on this fork?
+
+Main differences at time of writing:
+* Dark theme
+
 ## What is Nagdash?
 
 Nagdash is the long awaited replacement of [Naglite2](http://github.com/lozzd/naglite2).
