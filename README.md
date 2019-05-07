@@ -25,35 +25,20 @@ Naglite2, the first iteration, was dependant on parsing the status.dat file that
 
 ## Screenshots
 
-![On a monitor](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/01_on-a-monitor.png)
+![On a monitor](https://github.com/luiz161/Nagdash/raw/master/images/screenshots/dark_theme_screenshot.png)
 
-On a monitor
+* On a monitor
+* Easy to read tags
+* Service states
+* Easy to read duration/attempts
+* Reminder of all the 'known' issues
+* Hover next to a service for one click service actions. Schedule downtime (choose length), enable/disable notifications, and * acknowledge service problems directly from Nagdash.
 
-![Easy to read tags](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/02_easy-to-read-tags.png)
-
-Easy to read tags
-
-![Service states](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/03_service-states.png)
-
-Service states
-
-![Easy to read duration/attempts](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/04_easy-to-read-duration-attempts.png)
-
-Easy to read duration/attempts
-
-![Reminder of all the 'known' issues](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/05_reminder-of-all-the-known-issues.png)
-
-Reminder of all the 'known' issues
-
-![Hover over the row for one click service actions](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/06_click-service-actions.png)
-
-Hover next to a service for one click service actions. Schedule downtime (choose length), enable/disable notifications, and acknowledge service problems directly from Nagdash.
-
-![Easy config](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/07_easy-configuration.png)
+![Easy config](https://github.com/luiz1361/Nagdash/raw/master/images/screenshots/07_easy-configuration.png)
 
 Easy configuration
 
-![Choose your instances](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/08_live-settings-screen.png)
+![Choose your instances](https://github.com/luiz1361/Nagdash/raw/master/images/screenshots/08_live-settings-screen.png)
 
 Live settings screen (accessed using the 's' key) lets you choose which Nagios instances and host patterns are important to you on this copy of Nagdash.
 
@@ -80,7 +65,7 @@ The configuration file is fairly simple at this point, but here's an explanation
 
 * Nagios hosts array
 
-![Nagios hosts array](https://github.com/lozzd/Nagdash/raw/master/images/screenshots/09_nagios-hosts-array.png)
+![Nagios hosts array](https://github.com/luiz1361/Nagdash/raw/master/images/screenshots/09_nagios-hosts-array.png)
 
     * Hostname: The hostname or IP address of a server running the nagios-api
     * Port: The port the nagios-api instance is running on
