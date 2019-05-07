@@ -25,7 +25,7 @@ Naglite2, the first iteration, was dependant on parsing the status.dat file that
 
 ## Screenshots
 
-![On a monitor](https://github.com/luiz161/Nagdash/raw/master/images/screenshots/dark_theme_screenshot.png)
+![On a monitor](https://github.com/luiz1361/Nagdash/raw/master/images/screenshots/dark_theme_screenshot.png)
 
 * On a monitor
 * Easy to read tags
