@@ -203,7 +203,7 @@ $service_comment .= " ".$comment['comment_data'];
 ?>
 
     </table>
-    <?php echo "Generated @ ".date("H:i:s"); ?>
+    <?php echo "Last updated @ ".date("H:i:s"); ?>
 <?php } ?>
 
     </div>

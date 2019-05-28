@@ -21,6 +21,7 @@
 <fieldset>
 <legend style="color:#ffffff;">Hostname regex</legend>
 <input type="input" name="hostfilter" value="<?php echo $_COOKIE['nagdash_hostfilter']; ?>">
+<br>ie. ^((?!DESKTOP|PLOTTER|PROJECTOR|PRINTER).)*$</br>
 </fieldset>
 <legend style="color:#ffffff;">Last state change</legend>
 <div class="settings_group">
