@@ -174,9 +174,9 @@ if ((isset($filter_sort_by_time) && $filter_sort_by_time == 1) || $sort_by_time)
 }
 
 if (count($known_services) > 0) { ?>
-    <h4>Known Service Problems</h4>
-    <table class="widetable known_service" id="known_services">
-    <tr><th width="30%">Hostname</th><th width="37%">Service</th><th width="18%">State</th><th width="10%">Duration</th><th width="5%">Attempt</th></tr>
+    <h3>Known Service Problems</h3>
+    <table class="widetable" id="known_services">
+<tr><th width="25%">Hostname</th><th width="20%">Service</th><th width="15%">Comment</th><th width="18%">State</th><th width="10%">Duration</th><th width="5%">Attempt</th></tr>
 <?php
 
     foreach($known_services as $service) {
@@ -185,6 +185,7 @@ if (count($known_services) > 0) { ?>
         if (!$service['is_enabled']) $status_text = "disabled";
         echo "<tr class='known_service'>";
         $tag = NagdashHelpers::print_tag($service['tag'], count($nagios_hosts));
+		
         echo "<td>{$service['hostname']} " . $tag . "</td>";
         echo "<td>{$service['service_name']}</td>";
         echo "<td class='{$nagios_service_status_colour[$service['service_state']]}'>{$nagios_service_status[$service['service_state']]} ({$status_text})</td>";

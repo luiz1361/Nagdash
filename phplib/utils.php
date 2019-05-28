@@ -235,7 +235,7 @@ class NagdashHelpers {
                             "duration" => timeago($host_detail['last_state_change']),
                             "detail" => $host_detail['plugin_output'],
                             "current_attempt" => $host_detail['current_attempt'],
-                            "max_check_attempts" => $host_detail['max_check_attempts'],
+                            "max_check_attempts" => $host_detail['max_attempts'],
                             "tag" => $host_detail['tag'],
                             "is_hard" => ($host_detail['current_attempt'] >= $host_detail['max_check_attempts']) ? true : false,
                             "is_downtime" => (isset($host_detail['scheduled_downtime_depth']) && $host_detail['scheduled_downtime_depth'] > 0) ? true : false,

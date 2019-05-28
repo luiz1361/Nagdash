@@ -1,5 +1,5 @@
 <?php require '../config.php'; ?>
-<div id="settings_modal" class="modal hide fade" style="background-color:#000000;" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="settings_modal" class="modal fade" style="background-color:#000000;" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></button>
   <h3>Nagdash Settings</h3>
