@@ -14,15 +14,15 @@ if (!is_array($unwanted_hosts)) $unwanted_hosts = array();
 ?>
 <html>
 <head>
-<title>Nagios Dashboard</title>
-<script src="js/nagdash.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+<title>Nagios Dashboard</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+document.refresh_every_ms = <?php echo (isset($refresh_every_ms) ? $refresh_every_ms : 20000); ?>;
+</script>
+<script src="js/nagdash.js"></script>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/blinkftw.css">
 <link rel="stylesheet" href="css/main.css">
 
@@ -36,15 +36,22 @@ if (!is_array($unwanted_hosts)) $unwanted_hosts = array();
 <body>
   <div id="spinner"><h3><img src="images/ajax-loader.gif" align="absmiddle"> Refreshing...</h3></div>
   <div id="nagioscontainer"></div>
-  <?php NagdashHelpers::render("settings_dialog.php", ["nagios_hosts" => $nagios_hosts,
-                                                       "unwanted_hosts" => $unwanted_hosts]);?>
 
+  <?php
+  if ($show_settings_instructions) {
+        echo "<span id='settings-note'>Press 's' for settings.</span>";
+    }
+  NagdashHelpers::render("settings_dialog.php", ["nagios_hosts" => $nagios_hosts,
+  "unwanted_hosts" => $unwanted_hosts]);?>
 
 <script>
-    $(document).keypress("s", function(e) {
-        $("#settings_modal").modal();
+    $(document).keypress(function(e) {
+        if (e.which == 115 && !$(".controls div").hasClass("open")) { // "s"
+            $("#settings_modal").modal();
+        }
     });
     $(document).ready(load_nagios_data(<?php echo ($show_refresh_spinner === true)?>));
 </script>
+
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php require '../config.php'; ?>
-<div id="settings_modal" class="modal fade" style="background-color:#000000;" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="settings_modal" class="modal fade" style="background-color:#2d2d2d;" tabindex="-1" role="dialog" aria-hidden="true">
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</a></button>
   <h3>Nagdash Settings</h3>
@@ -73,7 +73,7 @@ Descending?
 </div>
 </form>
 </div>
-<div class="modal-footer" style="background-color:#000000;">
+<div class="modal-footer" style="background-color:#2d2d2d;">
   <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
   <button class="btn btn-primary" onClick="$('#settings-form').submit();">Save changes</button>
 </div>
