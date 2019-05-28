@@ -22,7 +22,7 @@ class NagiosLivestatus implements iNagiosConnection {
         $ret = NagdashHelpers::fetch_json(
             $hostname, $port, $protocol,
             $url . "/hosts?" .
-            "Columns=name,state,acknowledged,last_state_change,downtimes,notifications_enabled,current_attempt,max_check_attempts,plugin_output"
+            "Columns=name,state,acknowledged,last_state_change,downtimes,notifications_enabled,current_attempt,max_check_attempts,plugin_output,comments"
         );
 
         if ($ret["errors"] == true){
@@ -45,7 +45,7 @@ class NagiosLivestatus implements iNagiosConnection {
             $url . "/services?" .
             "Columns=description,host_name,plugin_output,notifications_enabled," .
             "downtimes,scheduled_downtime_depth,state,last_state_change," .
-            "current_attempt,max_check_attempts,acknowledged"
+            "current_attempt,max_check_attempts,acknowledged,comments"
         );
 
         $services = $ret["details"]["content"];

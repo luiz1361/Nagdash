@@ -288,6 +288,7 @@ class NagdashHelpers {
                                 "detail" => $service_detail['plugin_output'],
                                 "current_attempt" => $service_detail['current_attempt'],
                                 "max_attempts" => $service_detail[$api_cols['max_attempts']],
+                                "comments" => $service_detail['comments'],
                                 "tag" => $host_detail['tag'],
                                 "is_hard" => ($service_detail['current_attempt'] >= $service_detail[$api_cols['max_attempts']]) ? true : false,
                                 "is_downtime" => ((isset($service_detail['scheduled_downtime_depth']) && $service_detail['scheduled_downtime_depth'] > 0) || (isset($host_detail['scheduled_downtime_depth']) && $host_detail['scheduled_downtime_depth'] > 0)) ? true : false,

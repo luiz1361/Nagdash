@@ -55,6 +55,7 @@ class NagiosAPI implements iNagiosConnection {
             'max_attempts' => 'max_attempts',
             'service_name' => 'service_name',
             'host_name' => 'name',
+            'comments' => 'comments',
         ];
     }
 
