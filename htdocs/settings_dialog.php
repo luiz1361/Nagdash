@@ -18,10 +18,15 @@
     }
 ?>
 </fieldset>
+<script> function updateRegex() {
+    var filter='^((?!DESKTOP|PLOTTER|PROJECTOR|PRINTER).)*$'
+    document.getElementById("hostfilter").value=filter;
+    }
+</script>
 <fieldset>
 <legend style="color:#ffffff;">Hostname regex</legend>
-<input type="input" name="hostfilter" value="<?php echo $_COOKIE['nagdash_hostfilter']; ?>">
-<br>ie. ^((?!DESKTOP|PLOTTER|PROJECTOR|PRINTER).)*$</br>
+<input type="input" name="hostfilter" id="hostfilter" value="<?php echo $_COOKIE['nagdash_hostfilter']; ?>">
+<br>ie. ^((?!DESKTOP|PLOTTER|PROJECTOR|PRINTER).)*$ <input type="button" class="btn" onClick="updateRegex(this.value)" value="Test Example"></br>
 </fieldset>
 <legend style="color:#ffffff;">Last state change</legend>
 <div class="settings_group">
