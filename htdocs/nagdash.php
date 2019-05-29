@@ -204,6 +204,7 @@ $service_comment .= " ".$comment['comment_data'];
 
     </table>
     <?php echo "Last updated @ ".date("H:i:s"); ?>
+    <input type="button" class="btn" onClick='$("#settings_modal").modal();' value="Settings"></br>
 <?php } ?>
 
     </div>
