@@ -2,8 +2,14 @@
 
 ## What is different on this fork?
 
-Main differences at time of writing:
 * Dark theme
+
+Some integrations of commits from other forks as:
+* https://github.com/brennentsmith/Nagdash/
+* https://github.com/Commifreak/Nagdash/
+* https://github.com/matdevdug/Nagdash/
+* https://github.com/murphy-slaw/Nagdash/
+* https://github.com/tim-group/Nagdash/
 
 ## What is Nagdash?
 
