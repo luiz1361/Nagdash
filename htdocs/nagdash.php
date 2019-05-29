@@ -89,10 +89,7 @@ list($host_summary, $service_summary, $down_hosts, $known_hosts, $known_services
 <div id="info-window"><button class="close" onClick='$("#info-window").fadeOut("fast");'>&times;</button><div id="info-window-text"></div></div>
 <div class="frame">
     <div class="section">
-      <div class="header">
-        <h3>Host status</h3>
-        <p class="totals"><b>Total:</b> <?php foreach ($host_summary as $state => $count) { echo "<span class='{$nagios_host_status_colour[$state]}'>{$count}</span> "; } ?></p>
-      </div>
+        <h3 align="center">Host Status</h3>
 <?php if (count($down_hosts) > 0) { ?>
     <table id="broken_hosts" class="widetable">
     <tr style="color:#33b5e5;"><th>Hostname</th><th width="150px">State</th><th>Duration</th><th>Attempts</th><th>Detail</th></tr>
@@ -113,6 +110,7 @@ list($host_summary, $service_summary, $down_hosts, $known_hosts, $known_services
     }
 ?>
     </table>
+        <p class="totals"><b>Total:</b> <?php foreach ($host_summary as $state => $count) { echo "<span class='{$nagios_host_status_colour[$state]}'>{$count}</span> "; } ?></p>
 <?php } else { ?>
     <table class="widetable status_green"><tr><td><b>All hosts OK</b></td></tr></table>
 <?php
@@ -129,16 +127,13 @@ if (count($known_hosts) > 0) {
     echo "<table class='widetable known_hosts'><tr><td><b>Known Problem Hosts: </b> {$known_host_list_complete}</td></tr></table>";
 }
 ?>
-
+        <p class="totals"><b>Total:</b> <?php foreach ($host_summary as $state => $count) { echo "<span class='{$nagios_host_status_colour[$state]}'>{$count}</span> "; } ?></p>
     </div>
 </div>
 
 <div class="frame">
     <div class="section">
-      <div class="header">
-        <h3>Service status</h3>
-        <p class="totals"><b>Total:</b> <?php foreach($service_summary as $state => $count) { echo "<span class='{$nagios_service_status_colour[$state]}'>{$count}</span> "; } ?></p>
-    </div>
+        <h3 align="center">Service Status</h3>
 <?php if (count($broken_services) > 0) { ?>
     <table class="widetable" id="broken_services">
     <tr style="color:#33b5e5;"><th width="30%">Hostname</th><th width="50%">Service</th><th width="10%">Duration</th><th width="5%">Attempt</th></tr>
@@ -164,6 +159,7 @@ if (count($known_hosts) > 0) {
     }
 ?>
     </table>
+        <p class="totals"><b>Total:</b> <?php foreach($service_summary as $state => $count) { echo "<span class='{$nagios_service_status_colour[$state]}'>{$count}</span> "; } ?></p>
 <?php } else { ?>
     <table class="widetable status_green"><tr><td><b>All services OK</b></td></tr></table>
 <?php }
@@ -174,7 +170,7 @@ if ((isset($filter_sort_by_time) && $filter_sort_by_time == 1) || $sort_by_time)
 }
 
 if (count($known_services) > 0) { ?>
-    <h3>Known Service Problems</h3>
+    <h3 align="center">Known Service Problems</h3>
     <table class="widetable" id="known_services">
     <tr style="color:#33b5e5;"><th width="25%">Hostname</th><th width="20%">Service</th><th width="15%">Comment</th><th width="18%">State</th><th width="10%">Duration</th><th width="5%">Attempt</th>
 <?php
