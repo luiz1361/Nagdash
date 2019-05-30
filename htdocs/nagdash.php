@@ -110,7 +110,6 @@ list($host_summary, $service_summary, $down_hosts, $known_hosts, $known_services
     }
 ?>
     </table>
-        <p class="totals"><b>Total:</b> <?php foreach ($host_summary as $state => $count) { echo "<span class='{$nagios_host_status_colour[$state]}'>{$count}</span> "; } ?></p>
 <?php } else { ?>
     <table class="widetable status_green"><tr><td><b>All hosts OK</b></td></tr></table>
 <?php
