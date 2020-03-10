@@ -97,9 +97,10 @@ list($host_summary, $service_summary, $down_hosts, $known_hosts, $known_services
         <h3 align="center">Host Status</h3>
 <?php if (count($down_hosts) > 0) { ?>
     <table id="broken_hosts" class="widetable">
-    <tr style="color:#33b5e5;"><th>Hostname</th><th width="150px">State</th><th>Duration</th><th>Attempts</th><th>Detail</th></tr>
+    <tr class="tableheader"><th>Hostname</th><th width="150px">State</th><th>Duration</th><th>Attempts</th><th>Detail</th></tr>
 <?php
     foreach ($down_hosts as $host) {
+        $blink_tag = ($host['is_hard'] && $enable_blinking) ? "<blink>" : "";
         echo "<tr id='host_row' class='{$nagios_host_status_colour[$host['host_state']]}'>";
         $tag = NagdashHelpers::print_tag($host['tag'], count($nagios_hosts));
         echo "<td>{$host['hostname']} " . $tag . " <span class='controls'>";
@@ -107,7 +108,7 @@ list($host_summary, $service_summary, $down_hosts, $known_hosts, $known_services
                                             "host" => $host['hostname'],
                                             "service" => '']);
         echo "</span></td>";
-        echo "<td><blink>{$nagios_host_status[$host['host_state']]}</blink></td>";
+        echo "<td>{$blink_tag}{$nagios_host_status[$host['host_state']]}</blink></td>";
         echo "<td>{$host['duration']}</td>";
         echo "<td>{$host['current_attempt']}/{$host['max_check_attempts']}</td>";
         echo "<td class=\"desc\">{$host['detail']}</td>";
@@ -140,7 +141,7 @@ if (count($known_hosts) > 0) {
         <h3 align="center">Service Status</h3>
 <?php if (count($broken_services) > 0) { ?>
     <table class="widetable" id="broken_services">
-    <tr style="color:#33b5e5;"><th width="30%">Hostname</th><th width="50%">Service</th><th width="10%">Duration</th><th width="5%">Attempt</th></tr>
+    <tr class="tableheader"><th width="30%">Hostname</th><th width="50%">Service</th><th width="10%">Duration</th><th width="5%">Attempt</th></tr>
 <?php
     // Check for the presence of the 'sort_by_time' cookie, then the static config value.
     if ((isset($filter_sort_by_time) && $filter_sort_by_time == 1) || $sort_by_time) {
@@ -156,7 +157,7 @@ if (count($known_hosts) > 0) {
                                                 "host" => $service['hostname'],
                                                 "service" => $service['service_name']]);
         echo "</span></td>";
-        echo "<td class='bold {$nagios_service_status_colour[$service['service_state']]} {$soft_style}'>{$blink_tag}{$service['service_name']}<span class='detail'>{$service['detail']}</span></td>";
+        echo "<td class='bold {$nagios_service_status_colour[$service['service_state']]} {$soft_style}'><a href='{$service['weburl']}' target=\"_blank\">{$blink_tag}{$service['service_name']}</a><span class='detail'>{$service['detail']}</span></td>";
         echo "<td>{$service['duration']}</td>";
         echo "<td>{$service['current_attempt']}/{$service['max_attempts']}</td>";
         echo "</tr>";
@@ -172,6 +173,7 @@ if (count($known_hosts) > 0) {
 if ((isset($filter_sort_by_time) && $filter_sort_by_time == 1) || $sort_by_time) {
     usort($known_services,'NagdashHelpers::cmp_last_state_change');
 }
+
 
 if (isset($filter_hide_ksps) && $filter_hide_ksps == 1) {
     echo "<!--Known Service Problems hidden by user preference -->";
