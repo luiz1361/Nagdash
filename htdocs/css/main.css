@@ -6,10 +6,10 @@ table               { background-color: #F0F0F0; border-collapse: separate; }
 th                  { border: 1px #353535 solid; background-color: #404040 }
 .widetable          { width: 100%; clear: both }
 .bold               { font-weight: bold; }
-.status_green       { background-color: #269926; color: white; padding: 3px }
-.status_red         { background-color: #FF4040; color: white; padding: 3px }
-.status_yellow      { background-color: #FFDE40; color: black; padding: 3px }
-.status_grey        { background-color: #444444; color: white; padding: 3px }
+.status_green       { background-color: #58E65F; color: white; padding: 3px }
+.status_red         { background-color: #E22538; color: white; padding: 3px }
+.status_yellow      { background-color: #EBB667; color: black; padding: 3px }
+.status_grey        { background-color: #AF84B2; color: white; padding: 3px }
 .status_soft        { opacity: 0.25}
 .known_hosts        { background-color: lightgrey; color: black }
 .known_hosts_desc   { color: #686868 }
